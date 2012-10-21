@@ -1,0 +1,52 @@
+/* CSS Document */
+
+/* resets all default */
+/*body, div, p, h1, h2, h3, h4, h5, h6, ul, li {margin:0; padding:0; font-family:Arial, Helvetica, sans-serif;}*/
+
+/* sprite image */
+.sprite_loader {background:url(../images/sprite.png) no-repeat top left;}
+
+#mfile_uploader a {border:1px solid #fdfdfd; float:left; padding:.25em; text-decoration:none;}
+
+.clearthis {clear:both;}
+#file_uploader {height: 280px; width:430px;}
+
+#mfile_uploader {/*border:1px solid blue;*/ width:430px; position:absolute;}
+#mfile_uploader .uploadbox {/*border:1px solid red;*/ height:250px; position:relative;}
+#mfile_uploader .uploadbox .uploadboxlist {height:150px; list-style:none; overflow:scroll; }
+#mfile_uploader .uploadbox .uploadboxcaption {background: #2e3133; /*border: 1px solid red;*/ color:#fff; font:bold 16px arial, helvetica, sans-serif; padding:1em;}
+#mfile_uploader .uploadbox .uploadboxcaption .footnote {font:normal 12px arial, tahoma, sans-serif;}
+#mfile_uploader .uploadbox .uploadboxcaption .header_icon {background-position:-6px -98px; border:0; float:left; height:37px; margin-right:5px; outline:0; width:38px;}
+#mfile_uploader .uploadbox .uploadboxheader {background:#dfdfdf; overflow:auto; padding:.5em .25em;}
+#mfile_uploader .uploadbox .uploadboxheader div {float:left; font:normal 12px arial, tahoma, sans-serif; text-align:center;}
+#mfile_uploader .uploadbox .uploadboxheader .colone {border-right:1px dotted;  width:160px;}
+#mfile_uploader .uploadbox .uploadboxheader .coltwo{border-right:1px dotted; width:80px;}
+#mfile_uploader .uploadbox .uploadboxheader .colthree {border-right:1px dotted; width:95px;}
+#mfile_uploader .uploadbox .uploadboxheader .colfour {width:75px;}
+#mfile_uploader #upload_target {display:none;}
+
+
+/* upload lists */
+#mfile_uploader .uploadbox .uploadboxlist {margin:0; padding:0;}
+#mfile_uploader .uploadbox .uploadboxlist li {border-bottom: 1px solid #ccc; clear:both; font:normal 12px arial, tahoma, sans-serif; overflow:auto; padding:.75em 0;}
+#mfile_uploader .uploadbox .uploadboxlist li:hover {background:#fdffdf !important; cursor:pointer;}
+#mfile_uploader .uploadbox .uploadboxlist li div {float:left; padding-left:15px;}
+#mfile_uploader .uploadbox .uploadboxlist li .colone {width:150px; overflow:hidden}
+#mfile_uploader .uploadbox .uploadboxlist li .coltwo {width:60px; overflow:hidden;}
+#mfile_uploader .uploadbox .uploadboxlist li .colthree {width:85px; overflow:hidden;}
+#mfile_uploader .uploadbox .uploadboxlist li.even {background:#f0f0f0;}
+
+#mfile_uploader .uploadbox .uploadboxlist .uploaderdeleteicon {background-position: -8px -56px; /*border:1px solid;*/ float:left; height:10px; margin-left:12px; width:10px;}
+
+#mfile_uploader .uploadbox .tooltip {background:#fff9b4; color:#9c3c2a; display:none; font:normal 11px tahoma, arial, sans-serif; -moz-border-radius:5px 5px; -moz-box-shadow: 3px 3px 1px #ccc; padding:.5em; position:absolute; -webkit-border-radius: 5px 5px; -webkit-box-shadow: 3px 3px 1px #ccc; z-index:9999;}
+
+
+#mfile_uploader .uploadbox .uploadboxfooter {background:#dfdfdf; bottom:15px; min-height:37px; overflow:hidden; position:relative; z-index:9900;}
+#mfile_uploader .uploadbox .uploadboxfooter .gauge {background:#fff; float:right; font:normal 14px arial, tahoma, sans-serif; margin:3px 3px 0 0; padding:0 1em 0 2em; visibility:hidden;}
+#mfile_uploader .uploadbox .uploadboxfooter .gauge p {float:left; margin-top:7px;}
+#mfile_uploader .uploadbox .uploadboxfooter #uploadbtn {font:bold 12px arial, tahoma, sans-serif; margin:.5em 1em; padding-left:30px; min-width:45px;}
+#mfile_uploader .uploadbox .uploadboxfooter #uploadbtn:link, #mfile_uploader .uploadbox .uploadboxfooter #uploadbtn:visited {color:#42454a}
+#mfile_uploader .uploadbox .uploadboxfooter .image_count {color:#9f3333; float:left; font:normal 12px tahoma, arial, sans-serif; margin-top:10px;}
+
+
+#mfile_uploader .uploadbox .uploadboxfooter #uploadbtn.sprite_loader {background-position:left -12px;}
