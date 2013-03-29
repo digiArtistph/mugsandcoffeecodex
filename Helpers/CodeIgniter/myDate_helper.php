@@ -13,13 +13,13 @@
  * 		SAMPLE:
  * 			{CONTROLLER}
  * 
- * 			1. Get the Current Date [ 0000-00-00 hr:min:sec ]
+ * 			1. Get the Current MySQL Date Format with Time [ 0000-00-00 hr:min:sec ]
  *
  *				$datestring = "Y-m-d g:i:s";
  *				$time = time();
  *				$currentDate = mdate($datestring, $time);
  *
- *			2. MySQL Date Format [ 0000-00-00 ]
+ *			2. Get the Current MySQL Date Format [ 0000-00-00 ]
  *
  *				$datestring = "Y-m-d g:i:s";
  *				$time = time();
@@ -29,10 +29,16 @@
  *
  *			{VIEWS}
  *	
- *			3. Formatted Date [ Wednesday, October 03, 2012 ]
+ *			3. Formatted Date [ Mon, October 15, 2012 ]
  *			
+ *				$params = "2012-10-15";
  *				formattedDate($params);
  *				
+ *			4. Formatted Date [ Wednesday, October 03, 2012 ]
+ *
+ *				$params = "2013-02-26 13:20:49";
+ *				getDateArr($params);
+ *
  *
  *
  */
@@ -87,7 +93,6 @@ if ( ! function_exists('getDateArr'))
 	function getDateArr($arrDate)
 	{
 		
-
 		$arrDate = preg_split('/ /', $arrDate);
 		
 		list($arrDate, $arrTime)= $arrDate;
@@ -141,18 +146,6 @@ if ( ! function_exists('formattedDateMMDDYY'))
 
 }
 
-if ( ! function_exists('getTimeArr'))
-{
-	function getTimeArr($arrDate)
-	{
-
-		$arrDate = preg_split('/ /', $arrDate);
-		list($arrDate, $arrTime , $var)= $arrDate;
-
-		return $arrTime . " " . $var ;
-	}
-
-}
 
 // mysql date format
 if ( ! function_exists('mysqlDate'))
@@ -173,5 +166,6 @@ if ( ! function_exists('mysqlDate'))
 	}
 
 }
+
 
 
