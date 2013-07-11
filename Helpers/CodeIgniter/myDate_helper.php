@@ -1,7 +1,46 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * @author		Ian Paul Kionisala
+ * 
+ * To generate different Date format
+ * @author Ian Paul F. Kionisala
+ * @param array $params
+ * @package application/helper
+ * @version 1.0.0
+ * 
+ * 
+ * 
+ * 		SAMPLE:
+ * 			{CONTROLLER}
+ * 
+ * 			1. Get the Current MySQL Date Format with Time [ 0000-00-00 hr:min:sec ]
+ *
+ *				$datestring = "Y-m-d g:i:s";
+ *				$time = time();
+ *				$currentDate = mdate($datestring, $time);
+ *
+ *			2. Get the Current MySQL Date Format [ 0000-00-00 ]
+ *
+ *				$datestring = "Y-m-d g:i:s";
+ *				$time = time();
+ *				$currentDate = mdate($datestring, $time);
+ *
+ *				$date = $mysqlDate($currentDate);
+ *
+ *			{VIEWS}
+ *	
+ *			3. Formatted Date [ Mon, October 15, 2012 ]
+ *			
+ *				$params = "2012-10-15";
+ *				formattedDate($params);
+ *				
+ *			4. Formatted Date [ Wednesday, October 03, 2012 ]
+ *
+ *				$params = "2013-02-26 13:20:49";
+ *				getDateArr($params);
+ *
+ *
+ *
  */
  
  if ( ! function_exists('now'))
@@ -34,6 +73,10 @@ if ( ! function_exists('mdate'))
 {
 	function mdate($datestr = '', $time = '')
 	{
+		
+		$timezone = "Asia/Manila";
+		date_default_timezone_set($timezone);
+		
 		if ($datestr == '')
 			return '';
 
@@ -49,9 +92,10 @@ if ( ! function_exists('getDateArr'))
 {
 	function getDateArr($arrDate)
 	{
-					
+		
 		$arrDate = preg_split('/ /', $arrDate);
-		$arrDate = $arrDate[0];
+		
+		list($arrDate, $arrTime)= $arrDate;
 		
 
 		$arrDate = preg_split('/-/', $arrDate);
@@ -64,4 +108,64 @@ if ( ! function_exists('getDateArr'))
 	}
 	
 }
+
+if ( ! function_exists('formattedDate'))
+{
+	function formattedDate($arrDate)
+	{
+
+
+		$arrDate = preg_split('/-/', $arrDate);
+		
+		
+		list($year, $month, $day)= $arrDate;
+
+		
+		$arrDate = date("D, F d, Y ",mktime(0,0,0,$month, $day, $year));
+		
+		return $arrDate;
+	}
+
+}
+
+if ( ! function_exists('formattedDateMMDDYY'))
+{
+	function formattedDateMMDDYY($arrDate)
+	{
+
+		$arrDate = preg_split('/-/', $arrDate);
+
+
+		list($year, $month, $day)= $arrDate;
+
+		
+		$arrDate = date("m/d/Y",mktime(0,0,0,$month, $day, $year));
+		
+		return $arrDate;
+	}
+
+}
+
+
+// mysql date format
+if ( ! function_exists('mysqlDate'))
+{
+	function mysqlDate($arrDate)
+	{
+			
+		$arrDate = preg_split('/ /', $arrDate);
+		$arrDate = $arrDate[0];
+		
+		$arrDate = preg_split('/\//', $arrDate);
+		
+		
+		
+		$formatDate = implode('-', $arrDate);
+		
+		return $formatDate;
+	}
+
+}
+
+
 
