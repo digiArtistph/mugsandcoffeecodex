@@ -1,0 +1,28 @@
+div.sidebar {
+   border: 1px solid beige;
+   float: left;
+   text-align: right;
+   position: relative;
+   width: 10%;
+}
+div.sidebar ul {
+   border: 1px solid blue;
+   position: absolute;
+   right: 5px;
+   width: 50%;
+}
+div.canvas {
+    border: 1px solid red;
+   float: left;
+   height: 600px;
+   width:65%;
+}
+div.canvas canvas {
+   height: 100%;
+}
+ul {
+   list-style: none;
+   padding: 0;
+   margin:0;
+}
+
